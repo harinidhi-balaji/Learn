@@ -17,11 +17,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-
-import java.math.BigDecimal;
 import org.springframework.data.domain.Pageable;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -104,7 +102,6 @@ class CourseServiceTest {
         // Given
         when(authService.getCurrentUserEntity()).thenReturn(instructor);
         when(authService.isInstructor()).thenReturn(true);
-        when(authService.isAdmin()).thenReturn(false);
         when(courseRepository.save(any(Course.class))).thenReturn(course);
         when(modelMapper.map(course, CourseResponse.class)).thenReturn(courseResponse);
 

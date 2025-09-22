@@ -169,19 +169,12 @@ public class WebController {
         }
 
         try {
-            // Debug logging
-            System.out.println("Dashboard accessed by user: " + auth.getName());
-            System.out.println("User authorities: " + auth.getAuthorities());
-
             // Redirect based on role
             if (authService.isAdmin()) {
-                System.out.println("Redirecting to admin dashboard");
                 return "redirect:/admin";
             } else if (authService.isInstructor()) {
-                System.out.println("Redirecting to instructor dashboard");
                 return "redirect:/instructor";
             } else if (authService.isStudent()) {
-                System.out.println("Redirecting to student dashboard");
                 return "redirect:/student";
             }
 
